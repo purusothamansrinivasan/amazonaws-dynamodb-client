@@ -1,0 +1,23 @@
+
+
+# ReplicaStatus
+
+## Enum
+
+
+* `CREATING` (value: `"CREATING"`)
+
+* `CREATION_FAILED` (value: `"CREATION_FAILED"`)
+
+* `UPDATING` (value: `"UPDATING"`)
+
+* `DELETING` (value: `"DELETING"`)
+
+* `ACTIVE` (value: `"ACTIVE"`)
+
+* `REGION_DISABLED` (value: `"REGION_DISABLED"`)
+
+* `INACCESSIBLE_ENCRYPTION_CREDENTIALS` (value: `"INACCESSIBLE_ENCRYPTION_CREDENTIALS"`)
+
+
+

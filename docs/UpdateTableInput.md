@@ -1,0 +1,23 @@
+
+
+# UpdateTableInput
+
+Represents the input of an <code>UpdateTable</code> operation.
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**attributeDefinitions** | [**List&lt;AttributeDefinition&gt;**](AttributeDefinition.md) | An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, &lt;code&gt;AttributeDefinitions&lt;/code&gt; must include the key element(s) of the new index. |  [optional] |
+|**tableName** | **String** | The name of the table to be updated. |  |
+|**billingMode** | **BillingMode** | &lt;p&gt;Controls how you are charged for read and write throughput and how you manage capacity. When switching from pay-per-request to provisioned capacity, initial provisioned capacity values must be set. The initial provisioned capacity values are estimated based on the consumed read and write capacity of your table and global secondary indexes over the past 30 minutes.&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;PROVISIONED&lt;/code&gt; - We recommend using &lt;code&gt;PROVISIONED&lt;/code&gt; for predictable workloads. &lt;code&gt;PROVISIONED&lt;/code&gt; sets the billing mode to &lt;a href&#x3D;\&quot;https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual\&quot;&gt;Provisioned Mode&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;PAY_PER_REQUEST&lt;/code&gt; - We recommend using &lt;code&gt;PAY_PER_REQUEST&lt;/code&gt; for unpredictable workloads. &lt;code&gt;PAY_PER_REQUEST&lt;/code&gt; sets the billing mode to &lt;a href&#x3D;\&quot;https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand\&quot;&gt;On-Demand Mode&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; |  [optional] |
+|**provisionedThroughput** | [**ProvisionedThroughput**](ProvisionedThroughput.md) | The new provisioned throughput settings for the specified table or index. |  [optional] |
+|**globalSecondaryIndexUpdates** | [**List&lt;GlobalSecondaryIndexUpdate&gt;**](GlobalSecondaryIndexUpdate.md) | &lt;p&gt;An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;Create&lt;/code&gt; - add a new global secondary index to the table.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;Update&lt;/code&gt; - modify the provisioned throughput settings of an existing global secondary index.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;Delete&lt;/code&gt; - remove a global secondary index from the table.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;You can create or delete only one global secondary index per &lt;code&gt;UpdateTable&lt;/code&gt; operation.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href&#x3D;\&quot;https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html\&quot;&gt;Managing Global Secondary Indexes&lt;/a&gt; in the &lt;i&gt;Amazon DynamoDB Developer Guide&lt;/i&gt;. &lt;/p&gt; |  [optional] |
+|**streamSpecification** | [**StreamSpecification**](StreamSpecification.md) | &lt;p&gt;Represents the DynamoDB Streams configuration for the table.&lt;/p&gt; &lt;note&gt; &lt;p&gt;You receive a &lt;code&gt;ResourceInUseException&lt;/code&gt; if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn&#39;t have a stream.&lt;/p&gt; &lt;/note&gt; |  [optional] |
+|**ssESpecification** | [**SSESpecification**](SSESpecification.md) | The new server-side encryption settings for the specified table. |  [optional] |
+|**replicaUpdates** | [**List&lt;ReplicationGroupUpdate&gt;**](ReplicationGroupUpdate.md) | &lt;p&gt;A list of replica update actions (create, delete, or update) for the table.&lt;/p&gt; &lt;note&gt; &lt;p&gt;This property only applies to &lt;a href&#x3D;\&quot;https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html\&quot;&gt;Version 2019.11.21 (Current)&lt;/a&gt; of global tables. &lt;/p&gt; &lt;/note&gt; |  [optional] |
+|**tableClass** | **TableClass** | The table class of the table to be updated. Valid values are &lt;code&gt;STANDARD&lt;/code&gt; and &lt;code&gt;STANDARD_INFREQUENT_ACCESS&lt;/code&gt;. |  [optional] |
+|**deletionProtectionEnabled** | **Boolean** | Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table. |  [optional] |
+
+
+

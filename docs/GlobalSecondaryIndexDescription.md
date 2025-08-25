@@ -1,0 +1,22 @@
+
+
+# GlobalSecondaryIndexDescription
+
+Represents the properties of a global secondary index.
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**indexName** | **String** | The name of the global secondary index. |  [optional] |
+|**keySchema** | [**List&lt;KeySchemaElement&gt;**](KeySchemaElement.md) | &lt;p&gt;The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;HASH&lt;/code&gt; - partition key&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;RANGE&lt;/code&gt; - sort key&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;note&gt; &lt;p&gt;The partition key of an item is also known as its &lt;i&gt;hash attribute&lt;/i&gt;. The term \&quot;hash attribute\&quot; derives from DynamoDB&#39;s usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.&lt;/p&gt; &lt;p&gt;The sort key of an item is also known as its &lt;i&gt;range attribute&lt;/i&gt;. The term \&quot;range attribute\&quot; derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.&lt;/p&gt; &lt;/note&gt; |  [optional] |
+|**projection** | [**Projection**](Projection.md) | Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.  |  [optional] |
+|**indexStatus** | **IndexStatus** | &lt;p&gt;The current state of the global secondary index:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;CREATING&lt;/code&gt; - The index is being created.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;UPDATING&lt;/code&gt; - The index is being updated.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;DELETING&lt;/code&gt; - The index is being deleted.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;ACTIVE&lt;/code&gt; - The index is ready for use.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; |  [optional] |
+|**backfilling** | **Boolean** | &lt;p&gt;Indicates whether the index is currently backfilling. &lt;i&gt;Backfilling&lt;/i&gt; is the process of reading items from the table and determining whether they can be added to the index. (Not all items will qualify: For example, a partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After all items have been processed, the backfilling operation is complete and &lt;code&gt;Backfilling&lt;/code&gt; is false.&lt;/p&gt; &lt;p&gt;You can delete an index that is being created during the &lt;code&gt;Backfilling&lt;/code&gt; phase when &lt;code&gt;IndexStatus&lt;/code&gt; is set to CREATING and &lt;code&gt;Backfilling&lt;/code&gt; is true. You can&#39;t delete the index that is being created when &lt;code&gt;IndexStatus&lt;/code&gt; is set to CREATING and &lt;code&gt;Backfilling&lt;/code&gt; is false. &lt;/p&gt; &lt;note&gt; &lt;p&gt;For indexes that were created during a &lt;code&gt;CreateTable&lt;/code&gt; operation, the &lt;code&gt;Backfilling&lt;/code&gt; attribute does not appear in the &lt;code&gt;DescribeTable&lt;/code&gt; output.&lt;/p&gt; &lt;/note&gt; |  [optional] |
+|**provisionedThroughput** | [**ProvisionedThroughputDescription**](ProvisionedThroughputDescription.md) | &lt;p&gt;Represents the provisioned throughput settings for the specified global secondary index.&lt;/p&gt; &lt;p&gt;For current minimum and maximum provisioned throughput values, see &lt;a href&#x3D;\&quot;https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html\&quot;&gt;Service, Account, and Table Quotas&lt;/a&gt; in the &lt;i&gt;Amazon DynamoDB Developer Guide&lt;/i&gt;.&lt;/p&gt; |  [optional] |
+|**indexSizeBytes** | **Integer** | The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value. |  [optional] |
+|**itemCount** | **Integer** | The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value. |  [optional] |
+|**indexArn** | **String** | The Amazon Resource Name (ARN) that uniquely identifies the index. |  [optional] |
+
+
+
